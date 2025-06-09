@@ -11,7 +11,7 @@ html(lang="en")
     body
         include components/mixin
         header
-            .wrapper
+            .   
                 nav.nav.navbar.navbar-expand-lg
                     .container-fluid
                         img.img(src="img/slogo.png", alt="")
@@ -35,7 +35,7 @@ html(lang="en")
                                     li 
                                         a.nav-link(href='#') Контакти      
                 .seatrips
-                    p(class="fs-1").fs-1.h1 Морські пригоди
+                    h1(class="fs-1").fs-1 Морські пригоди
                     .italic
                         p(class="fst-italic") Не важливо, чи Ваша мандрівка належить до елітного рівня чи до
                         p(class="fst-italic") економваріанту, туроператор S trips потурбується, щоб Ви залишились
@@ -43,8 +43,9 @@ html(lang="en")
                     p.more
                         +button(more)
                     .choose
-                        p.h2.plan обери свій
-                        p.h2.plan план подрожі
+                        .h2.plan
+                            p обери свій
+                            p план подрожі
                         p(class="fst-italic").italic.dark Наша фірма -лідер на ринку у своїй сфері
                         p.img
                             img(src="img/arrow.png", alt="")
