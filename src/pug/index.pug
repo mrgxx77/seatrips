@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="viewport" content="width=device-width, user-scaleble=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
         link(rel='preconnect' href='https://fonts.googleapis.com')
         link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
@@ -11,11 +11,12 @@ html(lang="en")
     body
         include components/mixin
         header
-            .   
-                nav.nav.navbar.navbar-expand-lg
+            .container-fluid
+                nav(data-bs-theme="dark").nav.navbar.navbar-expand-lg
                     .container-fluid
-                        img.img(src="img/slogo.png", alt="")
-                        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation')
+                        a(href="index.html")
+                            img.img(src="img/slogo.png", alt="")
+                        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation').burger
                             span.navbar-toggler-icon
                         #navbarNavAltMarkup.collapse.navbar-collapse.justify-content-end
                             .navbar-nav.ul
@@ -35,19 +36,47 @@ html(lang="en")
                                     li 
                                         a.nav-link(href='#') Контакти      
                 .seatrips
-                    h1(class="fs-1").fs-1 Морські пригоди
+                    h1 Морські пригоди
                     .italic
                         p(class="fst-italic") Не важливо, чи Ваша мандрівка належить до елітного рівня чи до
                         p(class="fst-italic") економваріанту, туроператор S trips потурбується, щоб Ви залишились
                         p(class="fst-italic") задоволеними!
                     p.more
                         +button(more)
-                    .choose
-                        .h2.plan
-                            p обери свій
-                            p план подрожі
-                        p(class="fst-italic").italic.dark Наша фірма -лідер на ринку у своїй сфері
-                        p.img
-                            img(src="img/arrow.png", alt="")
+                .choose
+                    h2.plan обери свій
+                    h2.plan план подрожі
+                    p(class="fst-italic").italic.dark Наша фірма -лідер на ринку у своїй сфері
+                    p.img
+                        picture 
+                            a(href="#")
+                                img(src="img/arrow.png", alt="")
+        .container.second-blok
+            .tours
+                .about-company
+                    h2.about про нашу компанію
+                    p(class="fst-italic").italic Наша компанія пропонує ряд цікавих-розважальних послуг, які принесуть вам ряд вражень!
+                    p.more
+                        +button(more)
+                    p.cours * - зверніть увагу, зміна ціни може залежати від курсу долара.
+                .cards
+                    +card(cardInfo.velo)
+                    +card(cardInfo.island)
+                    +card(cardInfo.order)
+            p.watch
+                span дивитись усі плани
+                <svg fill="#000000" width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6.05 10.157l2.122-2.121L6.05 5.914 7.464 4.5 11 8.036 7.464 11.57 6.05 10.157zM8 0c4.418 0 8 3.59 8 8 0 4.418-3.59 8-8 8-4.418 0-8-3.59-8-8 0-4.418 3.59-8 8-8zm0 2C4.693 2 2 4.686 2 8c0 3.307 2.686 6 6 6 3.307 0 6-2.686 6-6 0-3.307-2.686-6-6-6z" fill-rule="evenodd"/></svg>
+                hr
+        .island.flex-between
+            p.img
+                picture 
+                    a(href="#")
+                        img(src="img/island.png", alt="")
+            .info 
+                h2 Дивовижний безлюдний острів, який зводить людей з розуму
+                .order
+                    p(class="fst-italic").italic Пхукет - курортно-туристична Мекка Таїланду. Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі.
+                    a(class="btn btn-warning" href="#").a замовити тур
+                    a(class="btn btn-primary" href="#").more детальніше
 
         script(src="js/scripts.js")

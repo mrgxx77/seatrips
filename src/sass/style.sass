@@ -1,60 +1,194 @@
 @import components/mixin
-
 *
     margin: 0
     padding: 0
-    
 body
     font-family: "Rubik", sans-serif
-a,li
+html
+  font-size: 0.7px
+  +media(1010)
+    font-size: 1px
+  +media(2040)
+    font-size: 2px
+//   scroll-behavior: smooth
+a,li 
     list-style: none
     text-decoration: none
-.wrapper
-    margin: 0 auto
-    max-width: 95%
+.flex-between
+    display: flex
+    justify-content: space-between
 header
-    background: url("../img/sea.png") no-repeat center/cover
-    // filter: drop-shadow(0px 20px 10px rgba(216, 216, 216, 0.24))
+    background: url("../img/sea.jpg") no-repeat center/cover
+    filter: drop-shadow(0rem 20rem 20rem rgba(216, 216, 216, 0.24))
 .nav
-    padding-bottom: 90px
+    padding: 20rem 30rem 90rem
     a
-        font-size: 14px
-        letter-spacing: 1px
+        font-size: 14rem
+        letter-spacing: 1rem
         text-transform: uppercase
         font-weight: 400
         text-align: right
+        transition: all 1s ease
         color: #ffffff
     a:hover
         color: #ffb700
+    .burger
+        color: #fff
+        border: #fff
     .ul
-        margin-top: 20px
+        margin-top: 20rem
+        li
+            padding-left: 10rem
+%toolbelt
+  position: absolute
+  content: ""
 .seatrips
-    .h1
+    // padding-top: 90rem
+    padding-bottom: 90rem
+    h1
         text-align: center
-        font-size: 90px
-        letter-spacing: 1px
+        font-size: 80rem
+        letter-spacing: 1rem
         text-transform: uppercase
         color: #ffffff
         font-weight: 400
-        padding-bottom: 10px
+        padding-bottom: 10rem
+        position: relative
+    h1:before 
+        @extend %toolbelt
+        width: 50rem
+        height: 100rem
+        bottom: 20rem
+        left: 20rem
+        color: #fff
     .italic
-        text-align: center
-        font-size: 16px
+        +italic
         color: #ffffff
-        font-weight: 400
-        padding-bottom: 10px
+        text-align: center
     .more
         +more
         text-align: center
-        padding-top: 10px
-        padding-bottom: 90px
+        padding-top: 10rem
+        padding-bottom: 90rem
+.choose
+    padding-top: 90rem
+    padding-bottom: 50rem
+    text-align: center
+    .italic
+        +italic
+        text-align: center
     .plan
         +h2
         text-align: center
-    .dark
-        color: #333333
-    .choose
-        padding-top: 90px
-        padding-bottom: 10px
-        .img
-            text-align: center
+    .img
+        text-align: center
+        padding-top: 10px   
+.tours
+    padding-top: 30rem
+    padding-bottom: 10rem
+    +media(1325)
+        display: flex
+        justify-content: space-between
+    .about-company
+        display: block
+        max-width: 270rem
+        .about
+            +h2
+        .italic
+            +italic
+        .more
+            +more
+            padding-top: 10rem
+        .cours
+            font-size: 13rem
+            color: #bbbbbb
+            font-weight: 400
+            padding-top: 10rem
+    .cards
+        justify-content: center
+        display: flex
+        flex-wrap: wrap
+        +media(767)
+            display: flex
+            justify-content: space-between
+        .card
+            width: 270rem
+            max-height: 300rem
+            background-color: #ffffff
+            border: none
+            margin-right: 50rem
+            column-gap: 20rem
+            transition: all 0.5s ease
+            padding-bottom: 40rem
+            +media(767)
+                padding-bottom: 0
+            .img
+                text-align: center
+                padding-top: 20rem
+                padding-bottom: 10rem
+            .tour
+                font-size: 18rem
+                color: #333333
+                font-weight: 400
+                text-align: center
+            .price
+                font-size: 24rem
+                color: #0099ff
+                font-weight: 400
+                text-align: center
+                transition: all 1s ease
+            .price:hover
+                text-decoration: underline
+            .description
+                font-size: 13rem
+                color: #999999
+                font-weight: 400
+                font-family: "Rubik"
+                padding: 0 20rem
+        .card:hover
+            filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.05))
+.second-blok
+    min-width: 80%  
+    padding-bottom: 100rem  
+    .watch
+        font-size: 12rem
+        letter-spacing: 0rem
+        text-transform: uppercase
+        color: #0099ff
+        font-weight: 400
+        text-align: center
+        padding-bottom: 50rem
+        span
+            padding-right: 10rem
+        svg
+            width: 11rem
+            height: 11rem
+            padding-bottom: 2rem
+            fill: #0099ff
+        hr
+            height: 1rem
+            background-color: #dfe3e6
+.island
+    .info
+        h2
+            +h2
+            max-width: 700rem
+        .italic
+            +italic
+            width: 458rem
+        .a
+            +more
+        .more
+            a
+                font-size: 16rem
+                letter-spacing: 1rem
+                text-transform: uppercase
+                color: #0099ff
+                font-weight: 400
+                text-align: center
+                opacity: 0.000
+                width: 180rem
+                height: 45rem
+                border-radius: 23rem
+                background-color: rgba(0,153,255,0)
+                border: 2rem solid #0099ff

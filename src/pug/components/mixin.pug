@@ -1,2 +1,42 @@
 mixin button(more)
-    a(class="badge rounded-pill text-bg-warning" href="#").a детальніше
+    a(class="btn btn-warning" href="#") детальніше
+
+-
+    let cardInfo = {
+        velo: {
+            img: "img/bike.png",
+            href: "#",
+            tour: "Тур на велосипедах",
+            currency: "грн*",
+            price: "335",
+            description: "Подорожуючи  на велосипеді, ви поринете в атмосферу мальовничих гір, чарівнмх краєвидів та шалених пригод."
+        },
+        island: {
+            img: "img/circle.png",
+            href: "#",
+            tour: "Екскурсія на острів",
+            currency: "грн*",
+            price: "500",
+            description: "Подорож на острів занурить Вас у незабутнні пригоди. Неймовірна краса  у будь-яку пору року."
+        },
+        order: {
+            img: "img/message.png",
+            href: "#",
+            tour: "Особливе замовлення",
+            currency: "грн*",
+            price: "250",
+            description: "Обираючи цю подорож, Ви самостійно робите її незабутнбою та не схожою на будь-які інші. "
+        }
+    }
+
+mixin card(oneCard)
+    .card
+        figure 
+            figcaption 
+                p.img
+                    img(src=oneCard.img, alt=oneCard.alt)
+                p.tour #{oneCard.tour}
+                    p.price
+                        span #{oneCard.price}
+                        span.currency #{oneCard.currency}
+                p.description #{oneCard.description}
