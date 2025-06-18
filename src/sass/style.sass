@@ -1,10 +1,13 @@
 @import components/mixin
+
 *
     margin: 0
     padding: 0
+
 body
     font-family: "Rubik", sans-serif
-//   scroll-behavior: smooth
+html
+    scroll-behavior: smooth
 a,li 
     list-style: none
     text-decoration: none
@@ -15,7 +18,8 @@ header
     background: url("../img/sea.jpg") no-repeat center/cover
     filter: drop-shadow(0px 20px 20px rgba(216, 216, 216, 0.24))
 .nav
-    padding: 20px 30px 90px
+    padding-top: 30px
+    padding-bottom: 90px
     a
         font-size: 14px
         letter-spacing: 1px
@@ -54,15 +58,18 @@ header
         text-align: center
         padding-top: 10px
         padding-bottom: 90px
+        a:hover
+            color: #000000
+            background-color: #fec840d8
 .seatrips
     position: relative
     &:before 
         position: absolute
         content: ""
-        width: 25%
+        width: 30%
         height: 10%
         top: 0
-        left: 37%
+        left: 35%
         border-top: 4px solid #ffffff
         border-left: 4px solid #ffffff
         border-right: 4px solid #ffffff
@@ -70,10 +77,10 @@ header
     &:after 
         position: absolute
         content: ""
-        width: 25%
+        width: 30%
         height: 30%
         bottom: 24%
-        left: 37%
+        left: 35%
         border-bottom: 4px solid #ffffff
         border-left: 4px solid #ffffff
         border-right: 4px solid #ffffff
@@ -120,11 +127,10 @@ header
             display: flex
             justify-content: space-between
         .card
-            width: 270px
+            max-width: 270px
             max-height: 300px
             background-color: #ffffff
             border: none
-            margin-left: 50px
             column-gap: 20px
             transition: all 0.5s ease
             padding-bottom: 40px
@@ -176,15 +182,17 @@ header
             height: 1px
             background-color: #dfe3e6
 .island
-    display: flex
-    justify-content: space-between
+    padding-bottom: 30px
+    img
+        width: 100%
     .info
+        padding-top: 20px
         h2
             +h2
             max-width: 700px
         .italic
             +italic
-            width: 458px
+            max-width: 458px
         .a
             padding: 10px 20px
             color: #fdfcfb
@@ -195,6 +203,11 @@ header
             filter: drop-shadow(0px 4px 10.5px rgba(193,139,1,0.24))
             transition: all 1s ease
             border-radius: 22px
+            &:hover
+                color: #000000
+                background-color: #fec840d8
+        .buttons
+            column-gap: 10px
         .detail
             border-radius: 23px
             background-color: rgba(0,153,255,0)
@@ -206,27 +219,99 @@ header
             font-weight: 400
             text-align: center
             padding: 10px 25px
-            margin-left: 10px
             &:hover
                 background-color: #0099ff
                 color: #ffffff
                 
         .cost
-            // width: 255px
+            margin-top: 10px
             background-color: #edf2f5
             align-items: center
-            margin-left: 30px
             .day
                 font-size: 24px
-                line-height: 44px
                 color: #0099ff
                 font-weight: 400
                 text-align: center
                 padding-top: 20px
             .service
-                // width: 165px
+                padding-bottom: 10px
                 font-size: 13px
-                line-height: 20px
                 color: #999999
                 font-weight: 400
                 text-align: center
+                p
+                    margin-bottom: 3px
+.block
+    background: url("../img/sea-two.jpg") no-repeat bottom/cover
+    padding-bottom: 50px
+    .wave
+        padding-top: 90px
+        h2
+            +h2
+            color: #fff
+            font-size: 56px
+        .blue
+            padding-top: 10px
+            color: #0099ff
+        p
+            padding-top: 20px
+            max-width: 446px
+            font-size: 16px
+            line-height: 27px
+            color: #ffffff
+            font-weight: 400
+        .more
+            margin-top: 20px
+            padding: 10px 20px
+            color: #fdfcfb
+            font-size: 16px
+            letter-spacing: 1px 
+            text-transform: uppercase
+            font-weight: 400
+            filter: drop-shadow(0px 4px 10.5px rgba(193,139,1,0.24))
+            transition: all 1s ease
+            border-radius: 22px
+            &:hover
+                color: #000000
+                background-color: #fec840d8
+    .olejka
+        padding-top: 90px
+        text-align: center
+        .italic
+            padding-top: 10px
+            max-width: 494px
+            +italic
+            color: #ffffff
+            line-height: 27px
+        .oleg
+            font-size: 18px
+            color: #ffffff
+            font-weight: 400
+        .client
+            font-size: 14px
+            color: #999999
+            font-weight: 400
+    .olejka
+        position: relative
+        &:before 
+            position: absolute
+            content: ""
+            width: 40%
+            height: 63%
+            top: 100px
+            left: 0
+            border-top: 4px solid #ffffff
+            border-bottom: 4px solid #ffffff
+            border-left: 4px solid #ffffff
+            opacity: 0.200
+        &:after 
+            position: absolute
+            content: ""
+            width: 40%
+            height: 63%
+            top: 100px
+            right: 0
+            border-bottom: 4px solid #ffffff
+            border-top: 4px solid #ffffff
+            border-right: 4px solid #ffffff
+            opacity: 0.200

@@ -14,7 +14,7 @@ html(lang="en")
             .container
                 nav(data-bs-theme="dark").nav.navbar.navbar-expand-lg
                     a(href="index.html")
-                        img.img(src="img/slogo.png", alt="")
+                        img.img(src="img/slogo.png", alt="логотип компанії")
                     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation').burger
                         span.navbar-toggler-icon
                     #navbarNavAltMarkup.collapse.navbar-collapse.justify-content-end
@@ -41,51 +41,74 @@ html(lang="en")
                         p(class="fst-italic") економваріанту, туроператор S trips потурбується, щоб Ви залишились
                         p(class="fst-italic") задоволеними!
                     p.more
-                        +button(more)
+                        a(class="btn btn-warning" href="#") детальніше
                 .choose
                     h2.plan обери свій
                     h2.plan план подрожі
                     p(class="fst-italic").italic.dark Наша фірма -лідер на ринку у своїй сфері
                     p.img
                         picture 
-                            a(href="#")
-                                img(src="img/arrow.png", alt="")
+                            a(href="#island")
+                                img(src="img/arrow.png", alt="стрілочка-скролл до іншого контейнера")
         .container.second-blok
-            .tours.row
-                .about-company.col-3
+            .tours.row.justify-content-center
+                .about-company.col-12
                     h2.about про нашу компанію
                     p(class="fst-italic").italic Наша компанія пропонує ряд цікавих-розважальних послуг, які принесуть вам ряд вражень!
                     p.more
                         +button(more)
                     p.cours * - зверніть увагу, зміна ціни може залежати від курсу долара.
                 .cards.col-9.justify-content-center.items-center
-                    .row.g-4
+                    .row
                         +card(cardInfo.velo)
                         +card(cardInfo.island)
                         +card(cardInfo.order)
-                    .row
-                        p.watch.col
-                            span дивитись усі плани
-                            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6.05 10.157l2.122-2.121L6.05 5.914 7.464 4.5 11 8.036 7.464 11.57 6.05 10.157zM8 0c4.418 0 8 3.59 8 8 0 4.418-3.59 8-8 8-4.418 0-8-3.59-8-8 0-4.418 3.59-8 8-8zm0 2C4.693 2 2 4.686 2 8c0 3.307 2.686 6 6 6 3.307 0 6-2.686 6-6 0-3.307-2.686-6-6-6z" fill-rule="evenodd"/></svg>
+                    p.watch.col-9
+                        a(href="#") дивитись усі плани
+                        <svg fill="#000000" width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6.05 10.157l2.122-2.121L6.05 5.914 7.464 4.5 11 8.036 7.464 11.57 6.05 10.157zM8 0c4.418 0 8 3.59 8 8 0 4.418-3.59 8-8 8-4.418 0-8-3.59-8-8 0-4.418 3.59-8 8-8zm0 2C4.693 2 2 4.686 2 8c0 3.307 2.686 6 6 6 3.307 0 6-2.686 6-6 0-3.307-2.686-6-6-6z" fill-rule="evenodd"/></svg>
             hr
         .container
-            .island
-                p.img.col-4
+            .island.row
+                p.img.col-12.col-xl-4
                     picture 
-                        img(src="img/island.png", alt="")
-                .info.col-8
+                        img(src="img/island.png", alt="фотографія острову")
+                .info.col-12.col-xl-8.container
                     h2.row Дивовижний безлюдний острів, який зводить людей з розуму
-                    .flex-between.row
-                        .order.col
-                            p(class="fst-italic").italic Пхукет - курортно-туристична Мекка Таїланду. Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі..
-                            a(class="btn btn-warning" href="#").a замовити тур
-                            a(class="btn btn-primary" href="#").detail детальніше
-                                //- +button(more).more
-                        .cost.col
+                    .row
+                        .order.col-12.col-md-8
+                            p(class="fst-italic").italic.row Пхукет - курортно-туристична Мекка Таїланду. Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі..
+                            .buttons(class="row gx-5").row.gx-5
+                                a(class="btn btn-warning" href="#").a.col-4 замовити тур
+                                a(class="btn btn-primary" href="#").detail.col-4 детальніше
+                        .cost.col-12.col-md-4
                             p.day 575 грн./день
                             .service
                                 p В дану вартість входить
                                 p обслуговування персоналу,
                                 p вечеря і захоплюючі історії.
+        .block 
+            .container 
+                .row
+                    .wave.col-12.col-xl-7
+                        h2 СПІЙМАЙ ХВИЛЮ
+                        h2.blue ЖИВИ ЯСКРАВО!
+                        p Полюбляєш екстрим та пригоди? Тоді тобі точно до нас! Мрієш стати на сапборд, але ніяк не міг наважитсь? Наші досвдчені інструктори навчать тебе вміло «піймати хвилі» та відчути себе справжнім сьорфером!
+                        a(class="btn btn-warning" href="#").more детальніше
+                    .olejka.items-center.col-12.col-xl-5
+                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 37" width="42" height="37"><style>.a{fill:#ffb700}</style><path class="a" d="m39.8 0h-13c-1.2 0-2.2 1-2.2 2.1v13.1c0 1.2 1 2.2 2.2 2.2h6.2q-0.1 5.1-2.4 8.2-1.8 2.4-5.4 4c-1.1 0.5-1.6 1.8-1 2.9l1.5 3.3c0.5 1 1.8 1.5 2.8 1q4.3-1.8 7.2-4.7 3.6-3.4 5-7.8 1.3-4.3 1.3-11.9v-10.3c0-1.1-1-2.1-2.2-2.1zm-35.2 36.8q4.2-1.8 7.2-4.7 3.6-3.4 4.9-7.7 1.3-4.4 1.3-12v-10.3c0-1.1-0.9-2.1-2.1-2.1h-13.1c-1.2 0-2.2 1-2.2 2.1v13.1c0 1.2 1 2.2 2.2 2.2h6.3q-0.2 5.1-2.4 8.2-1.8 2.4-5.4 4c-1.1 0.5-1.6 1.8-1.1 2.9l1.6 3.3c0.5 1 1.7 1.5 2.8 1z"/></svg>
+                        p(class="fst-italic").italic Чудова туристична фірма, що повністю виправдала мої очікування від подорожі. Я був приємно вражений екскурсіями, що для мене підібрали, працюють спражні професіонали своєї справи. 
+                        p.oleg Олег Набережний
+                        p.client клієнт
+                        p.img
+                            picture 
+                                a(href="#island")
+                                    img(src="img/oleg.png", alt="олежка клієнт")
+        .container 
+            .proposition
+                .flex-between
+                    +cards(cardsInfo.romantic_trip)
+                    +cards(cardsInfo.bike_tour)
+                    +cards(cardsInfo.island)
+                    +cards(cardsInfo.surfing)
 
         script(src="js/scripts.js")

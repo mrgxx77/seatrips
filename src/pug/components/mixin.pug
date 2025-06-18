@@ -30,7 +30,7 @@ mixin button(more)
     }
 
 mixin card(oneCard)
-    .card.col
+    .card.col-12.col-md-6
         figure 
             figcaption 
                 p.img
@@ -40,3 +40,62 @@ mixin card(oneCard)
                         span #{oneCard.price}
                         span.currency #{oneCard.currency}
                 p.description #{oneCard.description}
+
+-
+    let cardsInfo = {
+        romantic_trip: {
+            img: "img/bike.png",
+            href: "#",
+            tour: "Романтична подорож на 2",
+            currency: "грн.",
+            price: "2599",
+            description: "Подорож у найромантичніші куточки світу, занурить вас у дивовижні пейзажі природи.",
+            order: "замовити",
+            svg: "ellipse.svg"
+        },
+        bike_tour: {
+            img: "img/bike.png",
+            href: "#",
+            tour: "Велотур",
+            currency: "грн.",
+            price: "555",
+            description: "Бажаєте прокататись з вітерцем, та ще й з критим краєвидом довкола? Тоді швидше замовляй велотур!",
+            order: "замовити",
+            svg: "ellipse.svg"
+        },
+        island: {
+            img: "img/bike.png",
+            href: "#",
+            tour: "На острови!",
+            currency: "грн.",
+            price: "1599",
+            description: "Хочеш зануритись у тишу, місце де не має натовпу, та панує дмка природа? Тоді вперед за пригодами!",
+            order: "замовити",
+            svg: "ellipse.svg"
+        },
+        surfing: {
+            img: "img/bike.png",
+            href: "#",
+            tour: "Катання на сьорфінгу",
+            currency: "грн.",
+            price: "999",
+            description: "Хочеш отримати екстрим та мега вражень одночасно? Тоді вперед ловити хвилі!",
+            order: "замовити",
+            svg: "ellipse.svg"
+        }
+    }
+
+mixin cards(oneCard)
+    .card
+        figure 
+            figcaption 
+                p.img
+                    img(src=oneCard.img, alt=oneCard.alt)
+                p.tour #{oneCard.tour}
+                p.description #{oneCard.description}
+                .flex-between
+                    p.price
+                        span #{oneCard.price}
+                        span.currency #{oneCard.currency}
+                    p.order
+                        a(href="#") #{oneCard.order}
