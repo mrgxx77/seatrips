@@ -30,7 +30,7 @@ mixin button(more)
     }
 
 mixin card(oneCard)
-    .card.col-12.col-md-6
+    .card.col-12.col-md-4
         figure 
             figcaption 
                 p.img
@@ -105,19 +105,18 @@ mixin cards(oneCard)
     .card.col-12.col-xl-3.col-md-6
         figure 
             figcaption 
-                p.img.row
+                picture.img
                     img(src=oneCard.img, alt=oneCard.alt)
-                .text
-                    p.tour #{oneCard.tour}
-                    ul.description
-                        for item in oneCard.description 
-                            li #{item}
-                    .row
-                        p.price.col
-                            span #{oneCard.price}
-                            span.currency #{oneCard.currency}
-                        .order.col
-                            a(href="#").a #{oneCard.order}
+                p.tour #{oneCard.tour}
+                ul.description
+                    for item in oneCard.description 
+                        li #{item}
+                .row
+                    p.price.col
+                        span #{oneCard.price}
+                        span.currency #{oneCard.currency}
+                    .order.col
+                        a(href="#").a #{oneCard.order}
 
 -
     let workInfo = {
@@ -153,7 +152,7 @@ mixin cards(oneCard)
     }
 
 mixin work(oneCard)
-    .card.col
+    .card.col-md-6
         figure 
             figcaption 
                 .row
