@@ -44,58 +44,129 @@ mixin card(oneCard)
 -
     let cardsInfo = {
         romantic_trip: {
-            img: "img/bike.png",
+            img: "img/romantic.png",
             href: "#",
             tour: "Романтична подорож на 2",
             currency: "грн.",
             price: "2599",
-            description: "Подорож у найромантичніші куточки світу, занурить вас у дивовижні пейзажі природи.",
+            description: [
+                "Подорож у найромантичніші",
+                "куточки світу, занурить вас у",
+                "дивовижні пейзажі природи."
+            ],
             order: "замовити",
-            svg: "ellipse.svg"
+            svg: "img/ellipse.svg"
         },
         bike_tour: {
-            img: "img/bike.png",
+            img: "img/velo.png",
             href: "#",
             tour: "Велотур",
             currency: "грн.",
             price: "555",
-            description: "Бажаєте прокататись з вітерцем, та ще й з критим краєвидом довкола? Тоді швидше замовляй велотур!",
+            description: [
+                "Бажаєте прокататись з вітерцем, та",
+                "ще й з критим краєвидом довкола?",
+                "Тоді швидше замовляй велотур!"
+            ],
             order: "замовити",
-            svg: "ellipse.svg"
+            svg: "img/ellipse.svg"
         },
         island: {
-            img: "img/bike.png",
+            img: "img/on_island.png",
             href: "#",
             tour: "На острови!",
             currency: "грн.",
             price: "1599",
-            description: "Хочеш зануритись у тишу, місце де не має натовпу, та панує дмка природа? Тоді вперед за пригодами!",
+            description: [
+                "Хочеш зануритись у тишу, місце де",
+                "не має натовпу, та панує дмка",
+                "природа? Тоді вперед за пригодами!"
+            ],
             order: "замовити",
-            svg: "ellipse.svg"
+            svg: "img/ellipse.svg"
         },
         surfing: {
-            img: "img/bike.png",
+            img: "img/surfing.png",
             href: "#",
             tour: "Катання на сьорфінгу",
             currency: "грн.",
             price: "999",
-            description: "Хочеш отримати екстрим та мега вражень одночасно? Тоді вперед ловити хвилі!",
+            description: [
+                "Хочеш отримати екстрим та мега",
+                "вражень одночасно? Тоді вперед",
+                "ловити хвилі!"
+            ],
             order: "замовити",
-            svg: "ellipse.svg"
+            svg: "img/ellipse.svg"
         }
     }
 
 mixin cards(oneCard)
-    .card
+    .card.col-12.col-xl-3.col-md-6
         figure 
             figcaption 
-                p.img
+                p.img.row
                     img(src=oneCard.img, alt=oneCard.alt)
-                p.tour #{oneCard.tour}
-                p.description #{oneCard.description}
-                .flex-between
-                    p.price
-                        span #{oneCard.price}
-                        span.currency #{oneCard.currency}
-                    p.order
-                        a(href="#") #{oneCard.order}
+                .text
+                    p.tour #{oneCard.tour}
+                    ul.description
+                        for item in oneCard.description 
+                            li #{item}
+                    .row
+                        p.price.col
+                            span #{oneCard.price}
+                            span.currency #{oneCard.currency}
+                        .order.col
+                            a(href="#").a #{oneCard.order}
+
+-
+    let workInfo = {
+        hotel: {
+            img: "img/folder.png",
+            href: "#",
+            type: "Графік роботи готелів.",
+            currency: "xls",
+            Size: "Розмір файла: 10Mb",
+            description: [
+                "Розклад роботи усіх наших готелів,",
+                "можете знайти за цим посиланням.",
+                "Та додатково завантажити їх фото."
+            ],
+            download: "скачати",
+            svg: "img/cloud.png"
+        },
+        food: {
+            img: "img/folder.png",
+            href: "#",
+            type: "Інформація про харчування.",
+            currency: "xls",
+            Size: "Розмір файла: 10Mb",
+            description: [
+                "У будь-якому нашому турі включені",
+                "сніданки у вартість. Якщо ж",
+                "бажаєте замовити додотково, то",
+                "ознайомтесь з умовами."
+            ],
+            download: "скачати",
+            svg: "img/cloud.png"
+        }
+    }
+
+mixin work(oneCard)
+    .card.col
+        figure 
+            figcaption 
+                .row
+                    p.img.col-2
+                        img(src=oneCard.img, alt=oneCard.alt)
+                    .col-10
+                        .row
+                            p.type #{oneCard.type}
+                                span.currency #{oneCard.currency}
+                                span.size.row #{oneCard.Size}
+                ul.description.row
+                    for item in oneCard.description 
+                        li #{item}
+                .download
+                    img(src=oneCard.svg, alt=oneCard.alt)
+                    a(href="#").a #{oneCard.download}
