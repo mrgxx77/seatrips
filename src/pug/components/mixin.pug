@@ -49,6 +49,8 @@ mixin card(oneCard)
     let cardsInfo = {
         romantic_trip: {
             img: "img/romantic.png",
+            jpg: "img/romantic.jpg",
+            webp: "img/romantic.webp",
             href: "#",
             tour: "Романтична подорож на 2",
             currency: "грн.",
@@ -63,6 +65,8 @@ mixin card(oneCard)
         },
         bike_tour: {
             img: "img/velo.png",
+            jpg: "img/velo.jpg",
+            webp: "img/velo.webp",
             href: "#",
             tour: "Велотур",
             currency: "грн.",
@@ -77,6 +81,8 @@ mixin card(oneCard)
         },
         island: {
             img: "img/on_island.png",
+            jpg: "img/on_island.jpg",
+            webp: "img/on_island.webp",
             href: "#",
             tour: "На острови!",
             currency: "грн.",
@@ -91,6 +97,8 @@ mixin card(oneCard)
         },
         surfing: {
             img: "img/surfing.png",
+            jpg: "img/surfing.jpg",
+            webp: "img/surfing.webp",
             href: "#",
             tour: "Катання на сьорфінгу",
             currency: "грн.",
@@ -109,7 +117,13 @@ mixin cards(oneCard)
     .card
         figure 
             figcaption 
+                picture.green_triangle
+                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60"><style>.a{fill:#26cb15}</style><path class="a" d="m0 60v-60h60m-60 60v-60h60"/></svg>
+                    .star 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
                 picture.img
+                    sourse(srset=oneCard.jpg type='image/jpg')
+                    sourse(srset=oneCard.webp type='image/webp')
                     img(src=oneCard.img, alt=oneCard.alt)
                 .text
                     p.tour #{oneCard.tour}
@@ -122,58 +136,4 @@ mixin cards(oneCard)
                             span.currency #{oneCard.currency}
                         .order.col
                             a(href="#").a #{oneCard.order}
-                picture.green_triangle
-                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60"><style>.a{fill:#26cb15}</style><path class="a" d="m0 60v-60h60m-60 60v-60h60"/></svg>
-                    .star 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
--
-    let workInfo = {
-        hotel: {
-            img: "img/folder.png",
-            href: "#",
-            type: "Графік роботи готелів.",
-            currency: "",
-            Size: "Розмір файла: 10Mb",
-            description: [
-                "Розклад роботи усіх наших готелів,",
-                "можете знайти за цим посиланням.",
-                "Та додатково завантажити їх фото."
-            ],
-            download: "скачати",
-            svg: "img/cloud.png"
-        },
-        food: {
-            img: "img/folder.png",
-            href: "#",
-            type: "Інформація про харчування.",
-            currency: "xls",
-            Size: "Розмір файла: 10Mb",
-            description: [
-                "У будь-якому нашому турі включені",
-                "сніданки у вартість. Якщо ж",
-                "бажаєте замовити додотково, то",
-                "ознайомтесь з умовами."
-            ],
-            download: "скачати",
-            svg: "img/cloud.png"
-        }
-    }
-
-mixin work(oneCard)
-    .card.col-12
-        figure 
-            figcaption 
-                .row
-                    p.img.col-2
-                        img(src=oneCard.img, alt=oneCard.alt)
-                    .col-10
-                        .row
-                            p.type #{oneCard.type}
-                                span.currency #{oneCard.currency}
-                                span.size.row #{oneCard.Size}
-                ul.description.row
-                    for item in oneCard.description 
-                        li #{item}
-                .download
-                    img(src=oneCard.svg, alt=oneCard.alt)
-                    a(href="#").a #{oneCard.download}
+                            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6.05 10.157l2.122-2.121L6.05 5.914 7.464 4.5 11 8.036 7.464 11.57 6.05 10.157zM8 0c4.418 0 8 3.59 8 8 0 4.418-3.59 8-8 8-4.418 0-8-3.59-8-8 0-4.418 3.59-8 8-8zm0 2C4.693 2 2 4.686 2 8c0 3.307 2.686 6 6 6 3.307 0 6-2.686 6-6 0-3.307-2.686-6-6-6z" fill-rule="evenodd"/></svg>
