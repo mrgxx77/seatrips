@@ -39,9 +39,7 @@ html(lang="en")
                 .seatrips
                     h1 Морські пригоди
                     .italic
-                        p(class="fst-italic") Не важливо, чи Ваша мандрівка належить до елітного рівня чи до
-                        p(class="fst-italic") економваріанту, туроператор S trips потурбується, щоб Ви залишились
-                        p(class="fst-italic") задоволеними!
+                        p(class="fst-italic") Не важливо, чи Ваша мандрівка належить до елітного рівня чи до економваріанту, туроператор S trips потурбується, щоб Ви залишились задоволеними!
                     p.more
                         a(class="btn btn-warning" href="https://i.pinimg.com/736x/ce/05/c9/ce05c9b84e769c7f0d9c18dea2f00f52.jpg") детальніше
                 .choose
@@ -49,26 +47,25 @@ html(lang="en")
                     h2.plan план подрожі
                     p(class="fst-italic").italic.dark Наша фірма -лідер на ринку у своїй сфері
                     p.img
-                        picture 
-                            a(href="#proposition")
-                                img(src="img/arrow.png", alt="стрілочка-скролл до іншого контейнера")
+                        a(href="#proposition")
+                           <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M480-200 240-440l42-42 198 198 198-198 42 42-240 240Zm0-253L240-693l42-42 198 198 198-198 42 42-240 240Z"/></svg>
         main
             section.container
                 .second-blok
                     .tours.row.justify-content-center
-                        .about-company.col-9
+                        .about-company.col-9.justify-content-center
                             h2.about про нашу компанію
                             p(class="fst-italic").italic Наша компанія пропонує ряд цікавих-розважальних послуг, які принесуть вам ряд вражень!
                             p.more
                                 +button(more)
                             p.cours * - зверніть увагу, зміна ціни може залежати від курсу долара.
-                        .cards.col-9.justify-content-center.items-center
-                            .vio.row
-                                .velo(class="d-flex justify-content-center").col-12.col-lg-4
+                        .cards.col-12.col-xl-9.justify-content-center
+                            .vio.row.justify-content-center
+                                .velo.col-12.col-md-4.justify-content-center
                                     +card(cardInfo.velo)
-                                .excursion(class="d-flex justify-content-center").col-12.col-lg-4
+                                .excursion.col-12.col-md-4.justify-content-center
                                     +card(cardInfo.island)
-                                .order(class="d-flex justify-content-center").col-12.col-lg-4
+                                .order.col-12.col-md-4.justify-content-center
                                     +card(cardInfo.order)
                             p.watch
                                 a(href="#") дивитись усі плани
@@ -146,10 +143,7 @@ html(lang="en")
                                                     p.type Графік роботи готелів.
                                                         span.currency xls
                                                         span.size.row Розмір файла: 10Mb
-                                        ul.description.row
-                                            li Розклад роботи усіх наших готелів,
-                                            li можете знайти за цим посиланням.
-                                            li Та додатково завантажити їх фото.
+                                        p.description.row Розклад роботи усіх наших готелів, можете знайти за цим посиланням. Та додатково завантажити їх фото.
                                         .download
                                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffb700"><path d="M240-192q-80 0-136-56T48-384q0-76 52-131.5T227-576q23-85 92.5-138.5T480-768q103 0 179 69.5T744-528q70 0 119 49t49 119q0 70-49 119t-119 49H240Zm0-72h504q40 0 68-28t28-68q0-40-28-68t-68-28h-66l-6-65q-7-74-62-124.5T480-696q-64 0-115 38.5T297-556l-14 49-51 3q-48 3-80 37.5T120-384q0 50 35 85t85 35Zm240-216Z"/></svg>
                                             a(href="https://i.pinimg.com/736x/ce/05/c9/ce05c9b84e769c7f0d9c18dea2f00f52.jpg").a скачати
@@ -165,11 +159,7 @@ html(lang="en")
                                                     p.type Інформація про харчування.
                                                         span.currency xls
                                                         span.size.row Розмір файла: 10Mb
-                                        ul.description.row
-                                            li У будь-якому нашому турі включені
-                                            li сніданки у вартість. Якщо ж
-                                            li бажаєте замовити додотково, то
-                                            li ознайомтесь з умовами.
+                                        p.description.row У будь-якому нашому турі включені сніданки у вартість. Якщо ж бажаєте замовити додотково, то ознайомтесь з умовами.
                                         .download
                                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffb700"><path d="M240-192q-80 0-136-56T48-384q0-76 52-131.5T227-576q23-85 92.5-138.5T480-768q103 0 179 69.5T744-528q70 0 119 49t49 119q0 70-49 119t-119 49H240Zm0-72h504q40 0 68-28t28-68q0-40-28-68t-68-28h-66l-6-65q-7-74-62-124.5T480-696q-64 0-115 38.5T297-556l-14 49-51 3q-48 3-80 37.5T120-384q0 50 35 85t85 35Zm240-216Z"/></svg>
                                             a(href="https://i.pinimg.com/736x/ce/05/c9/ce05c9b84e769c7f0d9c18dea2f00f52.jpg").a скачати
